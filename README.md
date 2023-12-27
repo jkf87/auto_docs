@@ -36,8 +36,10 @@ HWP 파일 내의 누름틀 이름(빨간색으로 된 부분)
 ![image](https://github.com/jkf87/auto_docs/assets/28688071/cbd25279-a70f-49e8-90ec-a76a2343d49c)
 
 4.문서 생성
+
 ![출결서류생성](https://github.com/jkf87/auto_docs/assets/28688071/a74f5f6b-6533-4f2e-aeda-cee32ba47abe)
 
 5.결과물 확인하기
+
 ![image](https://github.com/jkf87/auto_docs/assets/28688071/cd53c287-2971-42a3-a1f6-26d2050a93a2)
 
