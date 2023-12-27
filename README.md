@@ -31,7 +31,7 @@ HWP 파일 내의 누름틀 이름(빨간색으로 된 부분)
 
 ![image](https://github.com/jkf87/auto_docs/assets/28688071/7dca175f-06c1-47e2-910c-55f842c24a72)
 
-3.모두 접근 허용 누르기
+3.모두 허용 누르기
 
 ![image](https://github.com/jkf87/auto_docs/assets/28688071/cbd25279-a70f-49e8-90ec-a76a2343d49c)
 
