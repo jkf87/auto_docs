@@ -40,7 +40,7 @@ HWP 파일 내의 누름틀 이름(빨간색으로 된 부분)
 ![image](https://github.com/jkf87/auto_docs/assets/28688071/a3f4fc08-6c54-42a4-9afd-31f28981b056)
 
 
-이후 파이썬 파일(app.py)를 실행해주세요.
+이후 파이썬 파일(main.py)를 실행해주세요.
 
 1.데이터 파일(CSV)을 첨부
 
