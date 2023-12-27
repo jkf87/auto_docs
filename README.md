@@ -13,9 +13,10 @@ pywin32: Provides access to many of the Windows APIs from Python. [PyWin32 Docum
 Clone the repository or download the project to your local machine.
 Navigate to the project directory.
 Install the required packages using the following command:
-Copy code
-pip install -r requirements.txt
 
+```
+pip install -r requirements.txt
+```
 # 기본 사용법
 CSV 파일 내에 있는 첫번째 행의 이름과 HWP 파일 내에 누름틀(Ctrl+K+E)의 이름과 갯수를 맞춰주세요.
 
