@@ -5,8 +5,9 @@ automatically generates a PDF file by putting data (CSV) into a Korean document 
 
 환경설정이 귀찮으실듯 하여 exe파일도 함께 배포합니다.(려고 했지만 용량이 커서 안올라가네요..)
 ## 의존성(Dependencies)
-pandas: Used for data manipulation and analysis. Pandas Documentation
-pywin32: Provides access to many of the Windows APIs from Python. PyWin32 Documentation
+pandas: Used for data manipulation and analysis. [Pandas Documentation](https://pypi.org/project/pandas/)
+
+pywin32: Provides access to many of the Windows APIs from Python. [PyWin32 Documentation](https://pypi.org/project/pywin32/)
 
 ### 설치방법(Installation Steps)
 Clone the repository or download the project to your local machine.
