@@ -4,6 +4,9 @@ automatically generates a PDF file by putting data (CSV) into a Korean document 
 출결 서류가 너무 많아서 HWP 자동화 코드를 생성했습니다.
 
 환경설정이 귀찮으실듯 하여 exe파일도 함께 배포합니다.(려고 했지만 용량이 커서 안올라가네요..)
+## 업데이트
+- 기존 파일명을 이름으로 지정하던 코드를 수정 -> 첫번째 필드로 이름을 지정
+  
 ## 의존성(Dependencies)
 pandas: Used for data manipulation and analysis. [Pandas Documentation](https://pypi.org/project/pandas/)
 
