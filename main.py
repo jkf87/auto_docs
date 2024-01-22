@@ -26,7 +26,9 @@ def main(csv_file_path, hwp_file_path):
                 hwp.PutFieldText(field_name, str(row[field_name]))
 
         # PDF로 저장하기
-        output_pdf_name = f'{row["이름"]}_결과_{idx}.pdf'
+        first_field_name = field_names[0] if field_names else "default"
+        first_field_value = str(row[first_field_name]) if first_field_name in data.columns else "default"
+        output_pdf_name = f'{first_field_value}_결과_{idx}.pdf'
         output_pdf_path = os.path.join(os.path.dirname(hwp_file_path), output_pdf_name)
 
         hwp.SaveAs(output_pdf_path, "PDF")
