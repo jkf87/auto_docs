@@ -13,8 +13,11 @@ automatically generates a PDF file by putting data (CSV) into a Korean document 
   
 ## 의존성(Dependencies)
 pandas: Used for data manipulation and analysis. [Pandas Documentation](https://pypi.org/project/pandas/)
+
 pywin32: Provides access to many of the Windows APIs from Python. [PyWin32 Documentation](https://pypi.org/project/pywin32/)
-Pillow
+
+Pillow : [docs](https://pillow.readthedocs.io/en/stable/)
+
 ### 설치방법(Installation Steps)
 이 프로젝트를 시작하려면 먼저 다음 명령을 사용하여 리포지토리를 복제합니다:
 
