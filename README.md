@@ -3,15 +3,18 @@ automatically generates a PDF file by putting data (CSV) into a Korean document 
 
 출결 서류가 너무 많아서 HWP 자동화 코드를 생성했습니다.
 
-환경설정이 귀찮으실듯 하여 exe파일도 함께 배포합니다.(려고 했지만 용량이 커서 안올라가네요..)
+환경설정이 귀찮으실듯 하여 exe파일도 함께 배포합니다
+[파일 다운로드](https://m100000577-my.sharepoint.com/:u:/g/personal/fitz87_samyang_es_kr/EUFpZnvOe6lAodMAoWdmB2MBWapNNeOGXTDqEnHEzK2Vsw?e=xYDLZz)
+
+
 ## 업데이트
 - 기존 파일명을 이름으로 지정하던 코드를 수정 -> 첫번째 필드로 이름을 지정
+- (24.2.18) 이미지 파일을 사용할 수 있도록 수정, 폴더안에 번호 순으로 정렬되어 들어감, PDF, HWP 두가지 형태로 저장할 수 있도록 옵션 제공
   
 ## 의존성(Dependencies)
 pandas: Used for data manipulation and analysis. [Pandas Documentation](https://pypi.org/project/pandas/)
-
 pywin32: Provides access to many of the Windows APIs from Python. [PyWin32 Documentation](https://pypi.org/project/pywin32/)
-
+Pillow
 ### 설치방법(Installation Steps)
 이 프로젝트를 시작하려면 먼저 다음 명령을 사용하여 리포지토리를 복제합니다:
 
@@ -64,4 +67,8 @@ HWP 파일 내의 누름틀 이름(빨간색으로 된 부분)
 5.결과물 확인하기
 
 ![image](https://github.com/jkf87/auto_docs/assets/28688071/cd53c287-2971-42a3-a1f6-26d2050a93a2)
+
+#  최신 버전 사용법 ( 유튜브 )
+
+
 
