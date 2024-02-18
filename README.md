@@ -73,5 +73,45 @@ HWP 파일 내의 누름틀 이름(빨간색으로 된 부분)
 
 #  최신 버전 사용법 ( 유튜브 )
 
+[![image](https://i.ytimg.com/vi/GuEdVQKFFE8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLACIrsXE9a9DnvRkWCc0W0JpEZF6Q)](https://youtu.be/GuEdVQKFFE8?si=7VHo5drFDYHSpKik)
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
