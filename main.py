@@ -13,9 +13,19 @@ def get_image_files(folder_path):
     files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if os.path.splitext(f)[1].lower() in supported_formats]
     return sorted(files)
 
-def main(csv_file_path, hwp_file_path, image_folder, save_format):
+def read_data_file(file_path):
+    #csv, xls, xlsx 파일을 읽어서 데이터프레임으로 반환
+    file_ext = os.path.splitext(file_path)[1].lower()
+    if file_ext == ".csv":
+        return pd.read_csv(file_path)
+    elif file_ext in [".xls", ".xlsx"]:
+        return pd.read_excel(file_path)
+    else:
+        raise ValueError(f"Unsupported file format: {file_ext}")
+        
+def main(data_file_path, hwp_file_path, image_folder, save_format):
     # CSV 파일을 읽기
-    data = pd.read_csv(csv_file_path)
+    data = pd.read_csv(data_file_path)
 
     # 이미지 폴더가 제공되었는지 확인하고 이미지 파일 목록을 가져옵니다.
     image_files = get_image_files(image_folder) if image_folder else []
