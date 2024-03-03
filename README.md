@@ -10,6 +10,7 @@ automatically generates a PDF file by putting data (CSV) into a Korean document 
 ## 업데이트
 - 기존 파일명을 이름으로 지정하던 코드를 수정 -> 첫번째 필드로 이름을 지정
 - (24.2.18) 이미지 파일을 사용할 수 있도록 수정, 폴더안에 번호 순으로 정렬되어 들어감, PDF, HWP 두가지 형태로 저장할 수 있도록 옵션 제공
+- (24. 3.4) 데이터가 비어 있는 경우 모든 데이터가 첫번째 자리 소수점을 찍는 버그를 수정, xls, xlsx파일 지원, exe파일 버전 0.03v으로 업데이트
   
 ## 의존성(Dependencies)
 pandas: Used for data manipulation and analysis. [Pandas Documentation](https://pypi.org/project/pandas/)
