@@ -22,10 +22,10 @@ def read_data_file(file_path):
         return pd.read_excel(file_path)
     else:
         raise ValueError(f"Unsupported file format: {file_ext}")
-        
+    
 def main(data_file_path, hwp_file_path, image_folder, save_format):
-    # CSV 파일을 읽기
-    data = pd.read_csv(data_file_path)
+    # 데이터 파일을 읽기
+    data = read_data_file(data_file_path)
 
     # 이미지 폴더가 제공되었는지 확인하고 이미지 파일 목록을 가져옵니다.
     image_files = get_image_files(image_folder) if image_folder else []
@@ -43,7 +43,23 @@ def main(data_file_path, hwp_file_path, image_folder, save_format):
     for idx, row in data.iterrows():
         for field_name in field_names:
             if field_name in data.columns:
-                hwp.PutFieldText(field_name, str(row[field_name]))
+                # 셀 데이터가 NaN이면 빈 문자열로 처리
+                if pd.isna(row[field_name]):
+                    field_text = ""
+                else:
+                    # 셀 데이터가 숫자형이면 포맷팅 처리
+                    cell_data = row[field_name]
+                    if isinstance(cell_data, (int, float)):
+                        if cell_data % 1 == 0:  # 정수형
+                            field_text = f"{int(cell_data)}"
+                        else:  # 실수형
+                            field_text = f"{cell_data:.2f}"  # 예: 소수점 두 자리까지
+                    else:
+                        field_text = str(cell_data)
+                
+                hwp.PutFieldText(field_name, field_text)
+
+
 
         # 이미지 처리
         if image_files and idx < len(image_files):
@@ -85,8 +101,8 @@ def main(data_file_path, hwp_file_path, image_folder, save_format):
 
 
 
-def select_file(entry, file_type):
-    file_path = filedialog.askopenfilename(filetypes=[(f"{file_type} files", f"*.{file_type.lower()}")])
+def select_file(entry, file_types):
+    file_path = filedialog.askopenfilename(filetypes=[(f"{ftype} files", f"*.{ftype.lower()}") for ftype in file_types])
     entry.delete(0, tk.END)  # Clear the entry
     entry.insert(0, file_path)  # Insert the selected file path
 
@@ -95,6 +111,7 @@ def select_folder(entry):
     entry.delete(0, tk.END)  # Clear the entry
     entry.insert(0, folder_path)  # Insert the selected folder path
 
+# csv 파일 뿐 아니라 xls, xlsx 파일도 지원하도록 수정
 def start_main_process(csv_entry, hwp_entry, folder_entry, save_format_var, insert_images): # 시작버튼 클릭시 실행
     csv_file = csv_entry.get() # csv파일 경로 가져오기
     hwp_file = hwp_entry.get() # hwp파일 경로 가져오기
@@ -102,6 +119,7 @@ def start_main_process(csv_entry, hwp_entry, folder_entry, save_format_var, inse
     save_format = save_format_var.get() # 저장 형식 가져오기 (hwp, pdf)
 
     # Validate if the fields are not empty
+    # csv 파일 뿐 아니라 xls, xlsx 파일도 지원하도록 수정
     if csv_file and hwp_file :
         # Here you can call your main function with the paths
         main(csv_file, hwp_file, image_folder, save_format)
@@ -130,7 +148,7 @@ hwp_entry.grid(row=1, column=1, padx=2, pady=2)
 folder_entry.grid(row=2, column=1, padx=2, pady=2)
 
 # Define the Labels
-Label(root, text="CSV파일을 선택하세요").grid(row=0, column=0, sticky='w', padx=10, pady=10)
+Label(root, text="데이터파일을 선택하세요").grid(row=0, column=0, sticky='w', padx=10, pady=10)
 Label(root, text="HWP파일을 선택하세요").grid(row=1, column=0, sticky='w', padx=10, pady=10)
 Label(root, text="이미지가 저장된 폴더를 선택하세요").grid(row=2, column=0, sticky='w', padx=10, pady=10)
 
@@ -147,8 +165,8 @@ Radiobutton(root, text="HWP", variable=save_format_var, value="HWP").grid(row=4,
 Radiobutton(root, text="PDF", variable=save_format_var, value="PDF").grid(row=4, column=1, sticky='w', padx=10, pady=10)
 
 # Define the Buttons
-Button(root, text="Browse", command=lambda: select_file(csv_entry, "CSV")).grid(row=0, column=2, padx=10, pady=10)
-Button(root, text="Browse", command=lambda: select_file(hwp_entry, "HWP")).grid(row=1, column=2, padx=10, pady=10)
+Button(root, text="Browse", command=lambda: select_file(csv_entry, ["CSV", "xls", "xlsx"])).grid(row=0, column=2, padx=10, pady=10)
+Button(root, text="Browse", command=lambda: select_file(hwp_entry, ["HWP"])).grid(row=1, column=2, padx=10, pady=10)
 Button(root, text="Browse", command=lambda: select_folder(folder_entry)).grid(row=2, column=2, padx=10, pady=10)
 Button(root, text="Start", command=lambda: start_main_process(csv_entry, hwp_entry, folder_entry, save_format_var, insert_images_var)).grid(row=5, column=1, pady=10)
 root.mainloop()
